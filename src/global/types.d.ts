@@ -1,4 +1,4 @@
-import { IHomePageStoreState } from "../pages/Home/types";
+import { IReduxPageStoreState } from "../pages/Redux/types";
 
 export interface IAction {
   type: string;
@@ -11,6 +11,6 @@ export interface IGlobalStoreState {
 }
 
 export interface IStoreState {
-  homePage: IHomePageStoreState;
+  reduxPage: IReduxPageStoreState;
   global: IGlobalStoreState;
 }

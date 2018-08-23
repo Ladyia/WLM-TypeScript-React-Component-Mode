@@ -1,17 +1,15 @@
 import * as React from "react";
-import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import { hot } from "react-hot-loader";
 import { IStoreState } from "./global/types";
 import { setGlobalSyncId } from "./global/actions";
-import HomePage from "./pages/Home";
-import TestPage from "./pages/Test";
+import ReduxPage from "./pages/Redux";
+import ReactPage from "./pages/ReactComponent";
 import styles from "./style.css";
+import { IAppComponentProps } from "./types";
 
-interface IAppComponentProps {
-  dispatch: Dispatch;
-}
+const onLineImage: string = "http://images.w3crange.com/welearnmore.png";
 
 class AppComponent extends React.Component<IAppComponentProps, {}> {
   constructor(props: IAppComponentProps) {
@@ -24,24 +22,27 @@ class AppComponent extends React.Component<IAppComponentProps, {}> {
 
   public render() {
     return (
-      <Router>
-        <div>
-          {/* layout struct(like nav, sidebar...) */}
-          <div className={styles["nav-container"]}>
-            <NavLink exact to="/">Home Page</NavLink>
-            <NavLink to="/test">Test Page</NavLink>
+      <div className={styles["container"]}>
+        <Router>
+          <div className={styles["content-container"]}>
+            <div className={styles["header-container"]}>
+              <div className={styles["header-box"]}>
+                <img className={styles["header-logo"]} src={onLineImage} />
+              </div>
+                {/* layout struct(like nav, sidebar...) */}
+              <div className={styles["nav-container"]}>
+                <NavLink exact to="/">React Component</NavLink>
+                <NavLink to="/redux">Redux</NavLink>
+              </div>
+            </div>
+            {/* register routes */}
+            <div className={styles["route-container"]}>
+              <Route exact path="/" component={ReactPage} />
+              <Route path="/redux" component={ReduxPage} />
+            </div>
           </div>
-
-          {/* register routes */}
-          <Route exact path="/" component={HomePage} />
-          <Route path="/test" component={TestPage} />
-
-          <button onClick={this.handleGlobal}>
-            tirgger global action
-          </button>
-
-        </div>
-      </Router>
+        </Router>
+      </div>
     );
   }
 }

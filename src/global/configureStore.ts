@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import thunk from "redux-thunk";
-import { homeReducers } from "@/pages/Home/flow/homeReducers";
+import { reduxReducers } from "@/pages/Redux/flow/reduxReducers";
 import { globalReducers } from "./reducers";
 
 const composeEnhancers = (window as any) && (window as any).REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;
 const reducer = combineReducers({
   global: globalReducers,
-  homePage: homeReducers,
+  reduxPage: reduxReducers,
 });
 
 export const configureStore = () => createStore(

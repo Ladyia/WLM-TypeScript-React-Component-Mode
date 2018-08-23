@@ -1,4 +1,3 @@
-import { Dispatch } from "redux";
 import * as CONST from "./constants";
 import { IAction } from "./types";
 

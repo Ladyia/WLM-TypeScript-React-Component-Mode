@@ -5,7 +5,7 @@ export function dataSync() {
   const syncData  = {
     type: CONST.SYNC_DATA,
     payload: {
-      data: "syncId=https://github.com/icepy",
+      data: "https://github.com/icepy",
     },
   };
   return syncData;
@@ -16,7 +16,7 @@ export function dataAsync(parameter: string): (dispatch: Dispatch) => void {
     const asyncData = {
       type: CONST.ASYNC_DATA,
       payload: {
-        data: "asyncId=https://icepy.me",
+        data: "https://icepy.me",
       },
     };
     setTimeout(() => {
