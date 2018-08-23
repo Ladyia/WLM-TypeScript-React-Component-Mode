@@ -8,7 +8,6 @@ import Button from "@material-ui/core/Button";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
-import Card from "@material-ui/core/Card";
 
 const TabContainer: React.SFC = (props) => {
   return (
