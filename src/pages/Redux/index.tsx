@@ -45,14 +45,16 @@ class ReduxComponent extends React.Component<TYPES.IReduxPageProps, TYPES.IRedux
       <div className={styles["container"]}>
         <div>
           <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Sync action" />
-            <Tab label="Async action" />
+            <Tab label="同步 Action" />
+            <Tab label="异步 Action" />
           </Tabs>
         </div>
         <div className={styles["contents"]}>
         {value === 0 && (
         <TabContainer>
-          <Button variant="outlined" color="secondary" onClick={this.actionDataSync}> dataSync action </Button>
+          <Button variant="outlined" color="secondary" onClick={this.actionDataSync}>
+            操作
+          </Button>
           <div className={styles["box"]}>
             syncId: { syncId }
           </div>
@@ -60,7 +62,9 @@ class ReduxComponent extends React.Component<TYPES.IReduxPageProps, TYPES.IRedux
         )}
         {value === 1 && (
         <TabContainer>
-          <Button variant="outlined" color="secondary" onClick={this.actionDataAsync}> dataAsync action </Button>
+          <Button variant="outlined" color="primary" onClick={this.actionDataAsync}>
+            操作
+          </Button>
           <div className={styles["box"]}>
             asyncId: { asyncId }
           </div>
