@@ -15,7 +15,7 @@ class MyText extends React.PureComponent<IMyTextProps> {
     const { text } = this.props;
     return (
       <Typography>
-        值：{ text }
+        PureComponent 值：{ text }
       </Typography>
     );
   }

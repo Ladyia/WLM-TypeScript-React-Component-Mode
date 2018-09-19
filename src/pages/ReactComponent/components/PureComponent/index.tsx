@@ -1,6 +1,7 @@
 import * as React from "react";
 import Button from "@material-ui/core/Button";
 import MyText from "./Text";
+import MyComparison from "./Comparison";
 import TextField from "@material-ui/core/TextField";
 import {
   IProps,
@@ -57,6 +58,9 @@ class MyPureComponent extends React.Component<IProps, IState> {
           </div>
         </div>
         <MyText
+          text={text}
+        />
+        <MyComparison
           text={text}
         />
       </div>
