@@ -1,8 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Header from "./components/Header";
 import { withStyles, createStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
@@ -10,6 +8,9 @@ import {
   IReactPageProps,
   IReactPageState,
 } from "./types";
+import Header from "./components/Header";
+import Setting from "./components/Setting";
+import MyContext from "./components/Context";
 
 const s = createStyles({});
 
@@ -50,7 +51,8 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
       <div>
         <Tabs value={value} onChange={this.handleChange}>
           <Tab label="无状态函数组件" />
-          <Tab label="有状态的类组件" />
+          <Tab label="有状态类组件" />
+          <Tab label="Context" />
         </Tabs>
         {value === 0 && (
           <TabContainer>
@@ -59,7 +61,16 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
             />
           </TabContainer>
         )}
-        {value === 1 && <TabContainer>Item Two</TabContainer>}
+        {value === 1 && (
+          <TabContainer>
+            <Setting />
+          </TabContainer>
+        )}
+        {value === 2 && (
+          <TabContainer>
+            <MyContext />
+          </TabContainer>
+        )}
       </div>
     );
   }
