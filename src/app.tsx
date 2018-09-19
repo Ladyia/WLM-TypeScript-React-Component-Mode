@@ -6,6 +6,7 @@ import { IStoreState } from "./global/types";
 import { setGlobalSyncId } from "./global/actions";
 import ReduxPage from "./pages/Redux";
 import ReactPage from "./pages/ReactComponent";
+import IMmutable from "./pages/Immutable";
 import styles from "./style.css";
 import { IAppComponentProps } from "./types";
 
@@ -33,12 +34,14 @@ class AppComponent extends React.Component<IAppComponentProps, {}> {
               <div className={styles["nav-container"]}>
                 <NavLink exact to="/">React Component</NavLink>
                 <NavLink to="/redux">Redux</NavLink>
+                <NavLink to="/immutable">immutable</NavLink>
               </div>
             </div>
             {/* register routes */}
             <div className={styles["route-container"]}>
               <Route exact path="/" component={ReactPage} />
               <Route path="/redux" component={ReduxPage} />
+              <Route path="/immutable" component={IMmutable} />
             </div>
           </div>
         </Router>
