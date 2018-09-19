@@ -13,6 +13,7 @@ import Setting from "./components/Setting";
 import MyContext from "./components/Context";
 import MyPortals from "./components/Portals";
 import MyFragments from "./components/Fragments";
+import MyPureComponent from "./components/PureComponent";
 
 const s = createStyles({});
 
@@ -57,6 +58,7 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
           <Tab label="Context" />
           <Tab label="Portals 组件" />
           <Tab label="Fragments 组件" />
+          <Tab label="PureComponent 组件" />
           <Tab label="高阶组件（HOC）" />
         </Tabs>
         {value === 0 && (
@@ -87,6 +89,11 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
           </TabContainer>
         )}
         {value === 5 && (
+          <TabContainer>
+            <MyPureComponent />
+          </TabContainer>
+        )}
+        {value === 6 && (
           <TabContainer>
             ...
           </TabContainer>
